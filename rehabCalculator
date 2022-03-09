@@ -1,0 +1,81 @@
+import java.util.Scanner; 
+
+public class Calculator {
+	public static void main(String[] args) {
+		System.out.println("Welcome to Grip Strength Calculator.");
+		System.out.println("For quick calculation of Dynamometer Measurements.");
+		System.out.println(" ");
+		
+		// Create scanner object
+		Scanner myObj = new Scanner(System.in);
+		
+		
+		System.out.println("Are you measuring both Right and Left hands? Please enter Y for yes or N for no");
+		String laterality = myObj.nextLine();
+		
+	
+		if (laterality.equals("Y")) {
+			System.out.println("You are measure both right and left hands. Please enter your first measurement for the right: ");
+			double bilatFirstR = myObj.nextDouble();
+			
+      //Alternating sides as the therapist would be 
+      
+			System.out.println("Please enter your first measurement for the left: ");
+			double bilatFirstL = myObj.nextDouble();
+			
+			System.out.println("Please enter your second measurement for the right: ");
+			double bilatSecondR = myObj.nextDouble();
+			
+			System.out.println("Please enter your second measurement for the left: ");
+			double bilatSecondL = myObj.nextDouble();
+			
+			System.out.println("Please enter your third measurement for the right: ");
+			double bilatThirdR = myObj.nextDouble();
+			
+			System.out.println("Please enter your third measurement for the left: ");
+			double bilatThirdL = myObj.nextDouble();
+			
+      // Calculating the average of the right and left respectively
+      
+			double averageRight = (bilatFirstR + bilatSecondR + bilatThirdR) / 3;
+			double averageLeft = (bilatFirstL + bilatSecondL + bilatThirdL) / 3;
+			
+      // Output the average and the individual measurements for documentation
+      
+			System.out.println("The average for the right was " + averageRight + " lbs.");
+			System.out.println("The average for the left was " + averageLeft + " lbs.");
+			System.out.println("Your measurements for the right were " + bilatFirstR + ", " + bilatSecondR + ", " + bilatThirdR + ".");
+			System.out.println("Your measurements for the left were " + bilatFirstL + ", " + bilatSecondL + ", " + bilatThirdL + ".");
+
+			
+		} else if (laterality.equals("N")) {
+			System.out.println("Are you measuring one hand only? Please enter Y for yes or N for no.");
+			String oneHand = myObj.nextLine();
+			
+			if (oneHand.equals("Y")) {
+				System.out.println("You are measuring only one hand. Please enter your first measurement: ");
+				double unilatFirst = myObj.nextDouble();
+				
+				System.out.println("Please enter your second measurement: ");
+				double unilatSecond = myObj.nextDouble();
+				
+				System.out.println("Please enter your third measurement: ");
+				double unilatThird = myObj.nextDouble();
+				
+				double average = (unilatFirst + unilatSecond + unilatThird) / 3;
+				
+				
+				System.out.println("The average was " + average + " lbs.");
+				System.out.println("Your measurements were " + unilatFirst + ", " + unilatSecond + ", " + unilatThird + ".");
+			
+			} else {
+				System.out.println("Why are you here?");
+			}
+			
+		} 
+		}
+		
+		
+	}
+
+
